@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Poppins", sans-serif;
+}
+
+// VARS
+
+// Body
+@body-width: 100%;
+@body-height: 100vh;
+
+// header
+@header-bg-color: #242424;
+@header-height: 75px;
+@header-padding: 10px 200px;
+
+// Logo
+@logo-color: #fff;
+@logo-size: 32px;
+@logo-weight: 600;
+@logo-margin-right: 250px;
+
+// Nav Links
+@header-li-margin-right: 5px;
+@header-link-primary-color: #a3a2a2;
+@header-link-hover-color: #c8c8c8;
+@header-link-size: 20px;
+
+// main
+@main-margin-top: 75px;
+
+body {
+    width: @body-width;
+    height: @body-height;
+    background-color: #1b1b1b;
+}
+
+
+header {
+    
+    .header-wrapper {
+        display: flex;
+        padding: @header-padding;
+        align-items: center;
+        background: @header-bg-color;
+        height: @header-height;
+
+        .header-logo {
+            cursor: pointer;
+            margin-right: @logo-margin-right;
+            a {
+                color: @logo-color;
+                font-size: @logo-size;
+                font-weight: @logo-weight;
+            }
+        }
+
+        .header-nav {
+            nav {
+                ul {
+                    display: flex;
+
+                    li {
+                        margin-right: @header-li-margin-right;
+
+                        a {
+                            font-size: @header-link-size;
+                            padding: 5px 10px;
+                            color: @header-link-primary-color;
+                            transition: color .2s linear;
+                        }
+                        a:hover {
+                            color: @header-link-hover-color;
+                        }
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    // margin-top: @main-margin-top;
+
+    .main-wrapper {
+
+        .main-wrapper__header {
+            pointer-events: none;
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+
+            .background-header-image {
+                box-shadow: 0 5px 50px 2px #223c50;
+                width: 100%;
+                height: 400px;
+                z-index: 1;
+                filter: brightness(50%);
+                object-fit: cover;
+            }
+
+            .main-wrapper__header-content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 2;
+
+                p {
+                    text-transform: uppercase;
+                    color: #fff;
+                    font-size: 48px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+            }
+        }
+
+        .main-wrapper__content {
+            margin: 0 auto;
+            width: 90%;
+            
+            p.separator {
+                user-select: none;
+                width: 100%;
+                color: #fff;
+                font-size: 28px;
+                font-weight: 600;
+                text-align: center;
+                margin-bottom: 50px;
+                margin-top: 150px;
+                margin-bottom: 50px;
+                border-top: 1px solid #f5f5f5;
+
+                &:first-child {
+                    margin-top: 50px;
+                }
+            }
+
+            .music-styles {
+                display: grid;
+                place-items: center;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 50px;
+
+                .music-style-card {
+                    user-select: none;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80%;
+                    min-width: 275px;
+                    height: 100%;
+                    background: #fff;
+                    border-radius: 20px;
+                    padding: 15px 0;
+                    transition: background-color .2s linear;
+
+                    .music-style-card__top {
+                        pointer-events: none;
+                    }
+                    .music-style-card__bottom-bottom {
+
+                        .music-style-title {
+                            width: 100%;
+                            text-align: center;
+                            font-size: 22px;
+                            font-weight: 600;
+                            margin-bottom: 10px;
+                        }
+
+                        .music-style-listeners-info,
+                        .music-style-recomendation-info {
+                            display: flex;
+                            font-weight: 600;
+                            color: #242424;
+
+                            p:first-child {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        background: #da9e30;
+                    }
+                }
+            }
+
+            .popular-music-collections {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 50px;
+                height: 50vh;
+
+                .popular-music-collection-card {
+                    position: relative;
+                    user-select: none;
+                    padding: 20px;
+                    background: #fff;
+                    border-radius: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    border: 2px solid transparent;
+                    transition: border-color .2s ease-in-out;
+                    min-width: 260px;
+                    height: 250px;
+
+                    .hot-watermark-popular-music {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        padding: 1px 5px;
+                        left: 10px;
+                        top: 10px;
+                        border-radius: 4px;
+                        background: rgba(196, 49, 29, 0.65);
+
+                        p {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-weight: 600;
+
+                            img {
+                                filter: opacity(.7);
+                                width: 24px;
+                                height: 24px;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        border: 2px solid #da9e30;
+                    }
+
+                    .popular-music-collection-card__top {
+                        margin-bottom: 20px;
+                        font-size: 22px;
+                        font-weight: 600;
+                    }
+
+                    .popular-music-collection-card__bottom {
+                        .popular-music-collection-card__bottom-top {
+                            margin-bottom: 25px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            p {
+                                font-size: 18px;
+
+                                &:nth-child(1) {
+                                    font-size: 20px;
+                                    font-weight: 600;
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+
+                        .popular-music-collection-card__bottom-bottom {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            .btn {
+                                padding: 0 15px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                cursor: pointer;
+                                height: 30px;
+                                width: 120px;
+                                background: #da9e30;
+                                transition: background-color .15s linear;
+                                border-radius: 5px;
+
+                                &:hover {
+                                    background: #398ed4;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MEDIA
+@media only screen and (max-width: 1121px) {
+    .header-wrapper {
+        padding: 5px 150px !important;
+    }
+    .header-nav ul li a {
+        font-size: 18px !important;
+    }
+}
+
+@media only screen and (max-width: 1015px) {
+    .header-wrapper {
+        padding: 5px 100px !important;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header-logo {
+        margin-right: 0 !important;
+    }
+    .header-nav ul li a {
+        font-size: 16px !important;
+    }
+
+    .music-styles {
+        grid-template-columns: 1fr !important;
+    }
+
+    .popular-music-collections {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media only screen and (max-width: 612px) {
+    .header-wrapper {
+        padding: 5px 25px !important;
+        display: flex;
+        justify-content: space-between;
+    }
+    .header-nav ul li a {
+        font-size: 14px !important;
+    }
+}
